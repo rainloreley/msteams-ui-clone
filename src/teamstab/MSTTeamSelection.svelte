@@ -206,16 +206,16 @@
 	}
 
 	footerleft:hover {
-		color: #6264a7;
+		color: var(--mspurple);
 	}
 
 	footerleft:hover svg .icons-unfilled {
-		fill: #6264a7;
+		fill: var(--mspurple);
 	}
 
 	footerleft:hover svg .icons-filled {
 		display: block;
-		fill: #6264a7;
+		fill: var(--mspurple);
 	}
 
 	footerright svg {
@@ -228,12 +228,12 @@
 	}
 
 	footerright svg:hover .icons-unfilled {
-		fill: #6264a7;
+		fill: var(--mspurple);
 	}
 
 	footerright svg:hover .icons-filled {
 		display: block;
-		fill: #6264a7;
+		fill: var(--mspurple);
 	}
 
 	@media (prefers-color-scheme: dark) {
@@ -265,23 +265,23 @@
 		}
 
 		footerleft:hover p {
-			color: #9ea2ff;
+			color: var(--mspurpledarkmode);
 		}
 
 		footerleft:hover svg .icons-unfilled {
-			fill: #9ea2ff;
+			fill: var(--mspurpledarkmode);
 		}
 
 		footerleft:hover svg .icons-filled {
-			fill: #9ea2ff;
+			fill: var(--mspurpledarkmode);
 		}
 
 		footerright svg:hover .icons-unfilled {
-			fill: #9ea2ff;
+			fill: var(--mspurpledarkmode);
 		}
 
 		footerright svg:hover .icons-filled {
-			fill: #9ea2ff;
+			fill: var(--mspurpledarkmode);
 		}
 
 		footerright svg {

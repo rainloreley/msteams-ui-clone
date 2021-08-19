@@ -37,7 +37,9 @@
 		<replysection>
 			{#each message.replies as reply}
 				<reply
-					style={reply.postedbyme ? 'border-left: 3px solid #6264a7;' : ''}
+					style={reply.postedbyme
+						? 'border-left: 3px solid var(--mspurple);'
+						: ''}
 				>
 					<ProfilePictureWithStatus
 						image={reply.user.pfp}
@@ -104,7 +106,7 @@
 		content: '';
 		pointer-events: none;
 		height: 100%;
-		background: #6264a7;
+		background: var(--mspurple);
 		width: 0.3rem;
 		position: absolute;
 		top: 0;
@@ -125,7 +127,7 @@
 	}
 
 	originalmessage.postedbyme {
-		border-left: 3px solid #6264a7;
+		border-left: 3px solid var(--mspurple);
 		width: calc(100% - 3px);
 	}
 
@@ -288,6 +290,6 @@
 			color: white;
 		}
 
-		/*background-color: #9ea2ff;*/
+		/*background-color: var(--mspurpledarkmode);*/
 	}
 </style>

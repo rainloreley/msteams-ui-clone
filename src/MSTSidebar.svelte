@@ -205,9 +205,9 @@
 	}
 
 	.sidebar-selected button::before {
-		border-left: solid 2px #6264a7;
+		border-left: solid 2px var(--mspurple);
 		border-radius: 0.4rem;
-		background: #6264a7;
+		background: var(--mspurple);
 		content: '';
 		height: 90%;
 		left: 0.2rem;
@@ -217,11 +217,11 @@
 
 	.sidebar-selected button svg path.icons-filled {
 		display: block;
-		fill: #6264a7;
+		fill: var(--mspurple);
 	}
 
 	.sidebar-selected button svg path.icons-unfilled {
-		fill: #6264a7;
+		fill: var(--mspurple);
 	}
 
 	.mstsidebar-list-item button p {
@@ -229,7 +229,7 @@
 	}
 
 	.sidebar-selected button p {
-		color: #6264a7 !important;
+		color: var(--mspurple) !important;
 	}
 
 	.mstsidebar-list-item:hover {
@@ -239,16 +239,16 @@
 	}
 
 	.mstsidebar-list-item:hover svg .icons-unfilled {
-		fill: #6264a7;
+		fill: var(--mspurple);
 	}
 
 	.mstsidebar-list-item:hover svg .icons-filled {
 		display: block;
-		fill: #6264a7;
+		fill: var(--mspurple);
 	}
 
 	.mstsidebar-list-item:hover p {
-		color: #6264a7;
+		color: var(--mspurple);
 	}
 
 	.mstsidebar-list-item button svg {
@@ -274,28 +274,28 @@
 		}
 
 		.sidebar-selected button::before {
-			border-left: solid 2px #9ea2ff;
-			background: #9ea2ff;
+			border-left: solid 2px var(--mspurpledarkmode);
+			background: var(--mspurpledarkmode);
 		}
 
 		.sidebar-selected button svg path.icons-filled {
-			fill: #9ea2ff;
+			fill: var(--mspurpledarkmode);
 		}
 
 		.sidebar-selected button svg path.icons-unfilled {
-			fill: #9ea2ff;
+			fill: var(--mspurpledarkmode);
 		}
 
 		.mstsidebar-list-item:hover svg .icons-unfilled {
-			fill: #9ea2ff;
+			fill: var(--mspurpledarkmode);
 		}
 
 		.mstsidebar-list-item:hover svg .icons-filled {
-			fill: #9ea2ff;
+			fill: var(--mspurpledarkmode);
 		}
 
 		.mstsidebar-list-item:hover p {
-			color: #9ea2ff;
+			color: var(--mspurpledarkmode);
 		}
 
 		.mstsidebar-list-item:hover {

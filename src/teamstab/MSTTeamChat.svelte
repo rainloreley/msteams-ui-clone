@@ -109,7 +109,7 @@
 		width: 190px;
 		height: 38px;
 		border-radius: 6px;
-		background-color: #6264a7;
+		background-color: var(--mspurple);
 		border: none;
 	}
 
@@ -123,7 +123,7 @@
 		}
 
 		.new-conversation:hover {
-			background-color: #9ea2ff;
+			background-color: var(--mspurpledarkmode);
 		}
 	}
 </style>

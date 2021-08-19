@@ -153,7 +153,7 @@
 	}
 
 	headerright profilepicture:hover {
-		background-color: #6264a7;
+		background-color: var(--mspurple);
 	}
 
 	headerright profilepicture innerpfp {

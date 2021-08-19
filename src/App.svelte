@@ -18,13 +18,15 @@
 	:root {
 		--ms-brandbg1: #e9eaf6;
 		--ms-brandborder1: #b2b5ff;
-		--ms-brandfgbg: #6264a7;
+
 		--ms-brandfg1: #494b83;
 		--ms-brandbg2: #3d3e66;
 		--ms-chatbg: #f5f5f5;
 		--ms-teamslistbg: #f0f0f0;
 		--ms-sidebarbg: #ebebeb;
 		--ms-searchbarbg: #dddde5;
+		--mspurple: #6264a7;
+		--mspurpledarkmode: #9ea2ff;
 	}
 
 	:global(body) {
