@@ -181,7 +181,7 @@
 
 	.searchicon {
 		align-self: center;
-		color: var(--msoffice-main-color);
+		color: gray;
 		margin-left: 8px;
 		height: 1.2em;
 	}

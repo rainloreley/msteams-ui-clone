@@ -301,5 +301,13 @@
 		.mstsidebar-list-item:hover {
 			background-color: #202020;
 		}
+
+		.icons-unfilled {
+			fill: #adadad;
+		}
+
+		.mstsidebar-list-item button p {
+			color: #adadad;
+		}
 	}
 </style>
