@@ -26,7 +26,8 @@
 							status: 'dnd',
 						},
 						timestamp: 1629394978,
-						message: 'wow, so much text',
+						message:
+							'wow, so much <font style="color: var(--mspurpledarkmode);">text</font>',
 						postedbyme: false,
 					},
 					{
