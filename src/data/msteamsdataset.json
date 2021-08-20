@@ -12,8 +12,8 @@
                         {
                             "user": {
                                 "id": "388a463a-57e7-492d-a48c-50720eddbb58",
-                                "firstname": "test",
-                                "lastname": "lmao",
+                                "firstname": "Loreley",
+                                "lastname": "",
                                 "pfp": "https://www.gravatar.com/avatar/1615be3776f4bdfa985afdea244eb1b3",
                                 "status": "online"
                             },
@@ -172,9 +172,9 @@
         }
     ],
     "user": {
-        "name": "test",
+        "name": "Loreley",
         "email": "loreley@abmgrt.dev",
-        "statusmessage": "lmao",
+        "statusmessage": "this is a test",
         "pfp": "https://www.gravatar.com/avatar/1615be3776f4bdfa985afdea244eb1b3",
         "status": "online"
     }
