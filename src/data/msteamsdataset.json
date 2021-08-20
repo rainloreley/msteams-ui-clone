@@ -1,0 +1,181 @@
+{
+    "teams": [
+        {
+            "id": "b6af7869-52c6-4b87-bd83-c627e911e43d",
+            "name": "Apple",
+            "channelsvisible": true,
+            "channels": [
+                {
+                    "id": "a09b084a-2724-4c18-91a0-883ed0be7c39",
+                    "name": "General",
+                    "messages": [
+                        {
+                            "user": {
+                                "id": "388a463a-57e7-492d-a48c-50720eddbb58",
+                                "firstname": "test",
+                                "lastname": "lmao",
+                                "pfp": "https://www.gravatar.com/avatar/1615be3776f4bdfa985afdea244eb1b3",
+                                "status": "online"
+                            },
+                            "timestamp": 1629394402,
+                            "message": "<font style='color: var(--mspurple);'>General</font>, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae mattis lectus. Fusce at finibus dui. Nam scelerisque orci magna, nec porttitor turpis mattis at. Sed ultrices elit quam, nec aliquet magna egestas efficitur. Integer venenatis est id metus bibendum pretium. Praesent at urna eu orci molestie molestie sed non orci. Vestibulum eu dui sed orci sollicitudin aliquet vitae eu ante. Quisque vitae rutrum nulla, sed fringilla lectus. In facilisis nibh nisl, vel dignissim erat molestie ut. Aenean at massa et leo finibus accumsan. Phasellus congue quis libero sit amet sodales. Donec ultricies commodo quam, vel eleifend purus dignissim vitae. Nam laoreet, sem a volutpat interdum, nibh quam faucibus est, sit amet hendrerit ligula augue quis nunc. Duis a lacus tellus. ",
+                            "title": "A very important message",
+                            "postedbyme": true,
+                            "mentionschannel": true,
+                            "replies": [
+                                {
+                                    "user": {
+                                        "id": "52a5aaeb-10c8-48a4-af5d-ab6a7c0ecefd",
+                                        "firstname": "Barack",
+                                        "lastname": "Obama",
+                                        "pfp": "https://www.whitehouse.gov/wp-content/uploads/2021/01/44_barack_obama.jpg",
+                                        "status": "dnd"
+                                    },
+                                    "timestamp": 1629394978,
+                                    "message": "wow, so much text",
+                                    "postedbyme": false
+                                },
+                                {
+                                    "user": {
+                                        "id": "865d465f-7323-463b-9e74-5f72971be87c",
+                                        "firstname": "Tim",
+                                        "lastname": "Cook",
+                                        "pfp": "https://pbs.twimg.com/profile_images/1403556543098916872/83tVAzyy.jpg",
+                                        "status": "away"
+                                    },
+                                    "timestamp": 1629395278,
+                                    "message": "why are you even here?!"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "6e9e210a-4165-47b9-8304-4afe2574624c",
+                    "name": "WWDC 22",
+                    "messages": [
+                        {
+                            "user": {
+                                "id": "b5812cc5-624a-4f68-be2c-559c8bdce40d",
+                                "firstname": "Craig",
+                                "lastname": "Federighi",
+                                "pfp": "https://bgr.com/wp-content/uploads/2021/04/apple-svp-software-engineering-craig-federighi.jpg?quality=70&strip=all",
+                                "status": "online"
+                            },
+                            "timestamp": 1629464273,
+                            "message": "<font style='color: var(--mspurple);'>WWDC 22</font> hi there<br/><br/>sorry, just wanted to annoy you",
+                            "postedbyme": false,
+                            "replies": []
+                        }
+                    ]
+                },
+                {
+                    "id": "957b1787-1b36-4a5d-9452-1d259eff16a1",
+                    "name": "September Event",
+                    "messages": []
+                },
+                {
+                    "id": "eaa189a8-f6d4-4082-953f-39f2fe4f54e6",
+                    "name": "iPhone 9999",
+                    "messages": []
+                },
+                {
+                    "id": "e1d4a4b8-582d-4535-b185-fc3e5b3c5b2e",
+                    "name": "Apple Glasses",
+                    "messages": []
+                }
+            ]
+        },
+        {
+            "id": "5d351ad4-f400-4c5c-bdde-dcee77acb24d",
+            "name": "Google",
+            "channelsvisible": true,
+            "channels": [
+                {
+                    "id": "a51aca48-4c8f-409e-ac07-f9fafe765a0c",
+                    "name": "General",
+                    "messages": []
+                },
+                {
+                    "id": "b77d8751-a494-4b4d-9659-a4770e95f2aa",
+                    "name": "Gmail",
+                    "messages": []
+                },
+                {
+                    "id": "672d0f93-b1e4-44ad-be8a-f2cfadecb217",
+                    "name": "Google Docs",
+                    "messages": []
+                },
+                {
+                    "id": "d2474c43-1025-408f-bfb0-906500cfe76f",
+                    "name": "Search",
+                    "messages": []
+                },
+                {
+                    "id": "2e184dc8-8168-4a7a-9dc1-18073eda9c27",
+                    "name": "A.I. Lab",
+                    "messages": []
+                },
+                {
+                    "id": "8acc8e9e-932d-4d27-8704-572bae88eaf1",
+                    "name": "Quantum Computing",
+                    "messages": []
+                },
+                {
+                    "id": "9a0f7f11-4145-4ce3-9ba4-5cb3095f010b",
+                    "name": "Coffee Break",
+                    "messages": []
+                }
+            ]
+        },
+        {
+            "id": "ca57bc7b-6cf3-42ca-8f5d-199e0476814d",
+            "name": "Microsoft",
+            "channelsvisible": true,
+            "channels": [
+                {
+                    "id": "9ec5deb3-051e-45b8-9be0-6c8c9e775a07",
+                    "name": "General",
+                    "messages": []
+                },
+                {
+                    "id": "a4e27ae7-26b6-4739-9e3e-803bc7d9417d",
+                    "name": "Azure",
+                    "messages": []
+                },
+                {
+                    "id": "e6155421-623a-4308-8173-0850eee334ab",
+                    "name": "Microsoft 365",
+                    "messages": []
+                },
+                {
+                    "id": "aa9bde0f-d859-4623-9bed-e7c4aaf999c4",
+                    "name": "✨ Secret Project ✨",
+                    "messages": []
+                },
+                {
+                    "id": "54ba53af-3b07-40c4-a2cf-1e9adf142aca",
+                    "name": "Surface",
+                    "messages": []
+                },
+                {
+                    "id": "98f7f8cc-17cc-4d80-9b3b-5df86f2661a9",
+                    "name": "Cloud Computing",
+                    "messages": []
+                },
+                {
+                    "id": "fd944fb5-0e84-4c29-b155-61eebce8e21c",
+                    "name": "Microsoft Teams",
+                    "messages": []
+                }
+            ]
+        }
+    ],
+    "user": {
+        "name": "test",
+        "email": "loreley@abmgrt.dev",
+        "statusmessage": "lmao",
+        "pfp": "https://www.gravatar.com/avatar/1615be3776f4bdfa985afdea244eb1b3",
+        "status": "online"
+    }
+}

@@ -2,9 +2,13 @@
 	import MenuDots from '../components/MenuDots.svelte';
 	import md5 from 'md5';
 
+	export let id;
 	export let name;
 	export let channels;
+	export let selectedchannel;
 	export let channelsvisible;
+
+	export let channelselectedaction;
 
 	function toggleChannelVisibility() {
 		channelsvisible = !channelsvisible;
@@ -42,7 +46,12 @@
 	{#if channelsvisible}
 		<ul class="teamchannels">
 			{#each channels as item}
-				<li class="channelitem {item.selected ? 'channelselected' : ''}">
+				<li
+					class="channelitem {item.id == selectedchannel
+						? 'channelselected'
+						: ''}"
+					on:click={() => channelselectedaction(id, item.id)}
+				>
 					<p>{item.name}</p>
 					<svg
 						viewBox="-6 -6 32 32"
@@ -99,6 +108,9 @@
 		overflow: hidden;
 		width: 30px;
 		height: 30px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		border-radius: 5px;
 	}
 

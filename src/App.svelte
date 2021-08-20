@@ -3,14 +3,31 @@
 	import MSTSidebar from './MSTSidebar.svelte';
 	import MSTTeamSelection from './teamstab/MSTTeamSelection.svelte';
 	import MSTTeamChat from './teamstab/MSTTeamChat.svelte';
+	import msteamsdataset from './data/msteamsdataset.json';
+
+	let selectedChannel = {
+		team: msteamsdataset.teams.find(
+			(e) => e.id == 'b6af7869-52c6-4b87-bd83-c627e911e43d'
+		),
+		channel: msteamsdataset.teams
+			.find((e) => e.id == 'b6af7869-52c6-4b87-bd83-c627e911e43d')
+			.channels.find((e) => e.id == 'a09b084a-2724-4c18-91a0-883ed0be7c39'),
+	};
+
+	function loadChannel(team, channel) {
+		selectedChannel = {
+			team: team,
+			channel: channel,
+		};
+	}
 </script>
 
 <main>
 	<MSTHeader />
 	<columnview>
 		<MSTSidebar />
-		<MSTTeamSelection />
-		<MSTTeamChat />
+		<MSTTeamSelection teamchannelselectionhandler={loadChannel} />
+		<MSTTeamChat channeldata={selectedChannel} />
 	</columnview>
 </main>
 

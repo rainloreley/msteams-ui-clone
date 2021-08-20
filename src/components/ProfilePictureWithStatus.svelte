@@ -20,7 +20,8 @@
 				data-name="Layer1"
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="009.99710.003"
-				style="border: 2px solid {window.matchMedia(
+				style="scale: {(100 * size) /
+					35}%; border: 2px solid {window.matchMedia(
 					'(prefers-color-scheme: dark)'
 				).matches
 					? bgcolordark

@@ -1,3 +1,10 @@
+<script>
+	import msteamsdataset from './data/msteamsdataset.json';
+	import ProfilePictureWithStatus from './components/ProfilePictureWithStatus.svelte';
+
+	let profilecardvisible = false;
+</script>
+
 <mstheader>
 	<headerleft>
 		<svg
@@ -73,13 +80,18 @@
 				></g
 			></svg
 		>
-		<profilepicture>
+		<profilepicture on:click={() => (profilecardvisible = !profilecardvisible)}>
+			<ProfilePictureWithStatus
+				image={msteamsdataset.user.pfp}
+				bgcolor={'#464775'}
+				bgcolordark={'#0a0a0a'}
+				size={'40'}
+				status={msteamsdataset.user.status}
+			/>
+		</profilepicture>
+		<!--<profilepicture>
 			<innerpfp>
-				<img
-					src="https://www.gravatar.com/avatar/1615be3776f4bdfa985afdea244eb1b3"
-					alt="user profile"
-					class="picture"
-				/>
+				<img src={msteamsdataset.user.pfp} alt="user profile" class="picture" />
 				<svg
 					id="Layer_1"
 					data-name="Layer1"
@@ -108,9 +120,101 @@
 					/></svg
 				>
 			</innerpfp>
-		</profilepicture>
+		</profilepicture>-->
 	</headerright>
 </mstheader>
+
+<profilecardwrapper
+	style={profilecardvisible ? 'display: flex' : 'display: none'}
+	on:click={() => (profilecardvisible = false)}
+>
+	<profilecard>
+		<profilecard-header>
+			<ProfilePictureWithStatus
+				image={msteamsdataset.user.pfp}
+				bgcolor={'#fff'}
+				bgcolordark={'#2a2a2a'}
+				size={'60'}
+				status={msteamsdataset.user.status}
+			/>
+			<profilecard-header-info>
+				<p class="username">{msteamsdataset.user.name}</p>
+				<p class="email">{msteamsdataset.user.email}</p>
+			</profilecard-header-info>
+		</profilecard-header>
+		{#if typeof msteamsdataset.user.statusmessage === 'string'}
+			<profilecard-statusmessage>
+				<p>{msteamsdataset.user.statusmessage}</p>
+			</profilecard-statusmessage>
+		{/if}
+		<section-saved>
+			<button class="account-section-button">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="#616161"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					class="feather feather-bookmark"
+					><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" /></svg
+				>
+				<p>Saved</p>
+			</button>
+		</section-saved>
+		<section-account>
+			<button class="account-section-button">
+				<svg
+					viewBox="-6 -6 32 32"
+					role="presentation"
+					focusable="false"
+					class="app-svg icons-accounts-tab"
+					><g class="icons-default-fill"
+						><path
+							d="M8 8.5C8 9.32843 7.32843 10 6.5 10C5.67157 10 5 9.32843 5 8.5C5 7.67157 5.67157 7 6.5 7C7.32843 7 8 7.67157 8 8.5Z"
+						/><path
+							d="M4 11.6988C4 11.1748 4.42479 10.75 4.94879 10.75H8.05121C8.57521 10.75 9 11.1748 9 11.6988C9 12.546 8.42338 13.2845 7.60144 13.49L7.54243 13.5048C6.85801 13.6759 6.14199 13.6759 5.45757 13.5048L5.39856 13.49C4.57661 13.2845 4 12.546 4 11.6988Z"
+						/><path
+							d="M11.5 8C11.2239 8 11 8.22386 11 8.5C11 8.77614 11.2239 9 11.5 9H14.5C14.7761 9 15 8.77614 15 8.5C15 8.22386 14.7761 8 14.5 8H11.5Z"
+						/><path
+							d="M11.5 11C11.2239 11 11 11.2239 11 11.5C11 11.7761 11.2239 12 11.5 12H14.5C14.7761 12 15 11.7761 15 11.5C15 11.2239 14.7761 11 14.5 11H11.5Z"
+						/><path
+							d="M2 5.75C2 4.7835 2.7835 4 3.75 4H16.25C17.2165 4 18 4.7835 18 5.75V14.25C18 15.2165 17.2165 16 16.25 16H3.75C2.7835 16 2 15.2165 2 14.25V5.75ZM3.75 5C3.33579 5 3 5.33579 3 5.75V14.25C3 14.6642 3.33579 15 3.75 15H16.25C16.6642 15 17 14.6642 17 14.25V5.75C17 5.33579 16.6642 5 16.25 5H3.75Z"
+						/></g
+					></svg
+				>
+				<p>Manage account</p>
+			</button>
+
+			<button class="account-section-button">
+				<svg
+					viewBox="-6 -6 32 32"
+					class="app-svg icons-add"
+					focusable="false"
+					role="presentation"
+					><g class="icons-default-fill"
+						><path
+							class="icons-filled"
+							d="M9.25 16.25C9.25 16.6642 9.58579 17 10 17C10.4142 17 10.75 16.6642 10.75 16.25V10.75H16.25C16.6642 10.75 17 10.4142 17 10C17 9.58579 16.6642 9.25 16.25 9.25H10.75V3.75C10.75 3.33579 10.4142 3 10 3C9.58579 3 9.25 3.33579 9.25 3.75V9.25H3.75C3.33579 9.25 3 9.58579 3 10C3 10.4142 3.33579 10.75 3.75 10.75H9.25V16.25Z"
+						/><path
+							class="icons-unfilled"
+							d="M9.5 16.5C9.5 16.7761 9.72386 17 10 17C10.2761 17 10.5 16.7761 10.5 16.5V10.5H16.5C16.7761 10.5 17 10.2761 17 10C17 9.72386 16.7761 9.5 16.5 9.5H10.5V3.5C10.5 3.22386 10.2761 3 10 3C9.72386 3 9.5 3.22386 9.5 3.5V9.5H3.5C3.22386 9.5 3 9.72386 3 10C3 10.2761 3.22386 10.5 3.5 10.5H9.5V16.5Z"
+						/></g
+					></svg
+				>
+				<p>Add personal account</p>
+			</button>
+		</section-account>
+		<section-logout>
+			<button class="account-section-button">
+				<p class="text-noimage">Sign out</p>
+			</button>
+		</section-logout>
+	</profilecard>
+</profilecardwrapper>
 
 <style>
 	mstheader {
@@ -126,7 +230,7 @@
 	headerright {
 		display: flex;
 		width: 426px;
-		justify-content: end;
+		justify-content: flex-end;
 	}
 
 	headerright .menudots {
@@ -147,22 +251,24 @@
 		width: 40px;
 		height: 100%;
 		display: flex;
-		padding-left: 8px;
-		padding-right: 8px;
+		padding-left: 10px;
+		padding-right: 6px;
 		margin-right: 8px;
+		align-items: center;
+		justify-content: center;
 	}
 
 	headerright profilepicture:hover {
 		background-color: var(--mspurple);
 	}
 
-	headerright profilepicture innerpfp {
+	/*headerright profilepicture innerpfp {
 		height: 35px;
 		width: 35px;
 		display: block;
 		position: relative;
 		align-self: center;
-	}
+	}*/
 
 	headerright profilepicture innerpfp svg {
 		position: absolute;
@@ -172,12 +278,12 @@
 		right: -5px;
 	}
 
-	headerright profilepicture .picture {
+	/*headerright profilepicture .picture {
 		border-radius: 999px;
 		height: 100%;
 		width: 40px;
 		align-self: center;
-	}
+	}*/
 
 	.searchicon {
 		align-self: center;
@@ -210,7 +316,7 @@
 	headerleft {
 		display: flex;
 		width: 426px;
-		justify-content: end;
+		justify-content: flex-end;
 		padding-right: 8px;
 	}
 
@@ -220,6 +326,169 @@
 
 	headerleft svg {
 		color: #dddddd;
+	}
+
+	profilecardwrapper {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		z-index: 1;
+	}
+
+	profilecard {
+		position: absolute;
+		min-width: 350px;
+		/*width: 200px;
+		height: 60px;*/
+		background-color: white;
+		top: 4px;
+		right: 4px;
+		box-shadow: 0 0.2rem 0.4rem -0.075rem rgba(0, 0, 0, 0.1);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	profilecard-header {
+		display: flex;
+		margin: 12px;
+		width: 100%;
+		padding-left: 16px;
+		padding-top: 8px;
+		/*justify-content: center;*/
+		align-items: center;
+		margin-bottom: 20px;
+	}
+
+	profilecard-header-info {
+		display: flex;
+		flex-direction: column;
+	}
+
+	profilecard-header-info p {
+		margin-block-start: 0;
+		margin-block-end: 0;
+	}
+
+	profilecard-header-info .username {
+		font-weight: 600;
+	}
+
+	profilecard-header-info .email {
+		color: gray;
+		font-size: 12px;
+	}
+
+	profilecard-statusmessage {
+		display: flex;
+		width: 90%;
+		min-width: 250px;
+		margin-left: 8px;
+		margin-right: 8px;
+		background-color: #faf9f8;
+		justify-content: start;
+		align-items: flex-start;
+		/*height: 50px;*/
+	}
+
+	profilecard-statusmessage p {
+		margin-block-start: 0;
+		margin-block-end: 0;
+		margin: 8px 8px 24px 8px;
+		font-size: 14px;
+	}
+
+	section-saved {
+		margin-top: 16px;
+		border-top: 2px solid #f3f2f1;
+		width: 100%;
+		height: 38px;
+	}
+
+	section-account {
+		margin-top: 8px;
+		border-top: 2px solid #f3f2f1;
+		width: 100%;
+		height: calc(38px * 2);
+	}
+
+	section-logout {
+		margin-top: 8px;
+		border-top: 2px solid #f3f2f1;
+		width: 100%;
+	}
+
+	/*section-saved .saved-button {
+		border: none;
+		display: flex;
+		background-color: transparent;
+		width: 100%;
+		padding-left: 8px;
+		margin-top: 8px;
+		height: 30px;
+		margin-bottom: 8px;
+		justify-content: start;
+		align-items: center;
+	}
+
+	section-saved .saved-button:hover {
+		background-color: #f0efee;
+	}
+
+	section-saved .saved-button p {
+		margin-block-start: 0;
+		margin-block-end: 0;
+		font-size: 14px;
+		margin-left: 8px;
+	}
+
+	section-saved .saved-button svg {
+		display: block;
+		width: 17px;
+		height: 17px;
+	}*/
+
+	.account-section-button {
+		border: none;
+		display: flex;
+		background-color: transparent;
+		width: 100%;
+		padding-left: 12px;
+		margin-top: 8px;
+		height: 30px;
+		margin-bottom: 8px;
+		justify-content: start;
+		align-items: center;
+	}
+
+	.account-section-button:hover {
+		background-color: #f0efee;
+	}
+
+	.account-section-button p {
+		margin-block-start: 0;
+		margin-block-end: 0;
+		font-size: 14px;
+		left: 35px;
+		position: absolute;
+	}
+
+	.account-section-button p.text-noimage {
+		left: 16px;
+	}
+
+	.account-section-button svg.feather {
+		display: block;
+		width: 17px;
+		height: 17px;
+	}
+
+	.account-section-button svg.app-svg {
+		display: block;
+		width: 17px !important;
+		height: 17px;
+		scale: 180%;
 	}
 
 	@media (prefers-color-scheme: dark) {
@@ -237,6 +506,55 @@
 
 		headerright profilepicture:hover {
 			background-color: #252525;
+		}
+
+		profilecard {
+			background-color: #2a2a2a;
+			box-shadow: 0 0.2rem 0.4rem -0.075rem rgba(0, 0, 0, 0.6);
+		}
+
+		profilecard-header-info .username {
+			color: white;
+		}
+
+		profilecard-header-info .email {
+			color: #adadad;
+		}
+
+		profilecard-statusmessage {
+			background-color: #3b3a3a;
+		}
+
+		profilecard-statusmessage p {
+			color: white;
+		}
+
+		section-saved {
+			border-top: 2px solid #1f1f1f;
+		}
+
+		section-account {
+			border-top: 2px solid #1f1f1f;
+		}
+
+		section-logout {
+			border-top: 2px solid #1f1f1f;
+		}
+
+		.account-section-button:hover {
+			background-color: #3b3a39;
+		}
+
+		.account-section-button p {
+			color: #d6d6d6;
+		}
+
+		.account-section-button svg.feather {
+			stroke: #d6d6d6;
+		}
+
+		.account-section-button svg.app-svg {
+			fill: #d6d6d6;
 		}
 	}
 </style>

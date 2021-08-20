@@ -1,6 +1,18 @@
 <script>
-	import MenuDots from '../components/MenuDots.svelte';
 	import MSTTeamSelectionItem from './MSTTeamSelectionItem.svelte';
+	import dataset from '../data/msteamsdataset.json';
+
+	function clickedChannel(teamid, channelid) {
+		selectedchannel = channelid;
+		let team = dataset.teams.find((e) => e.id == teamid);
+		let channel = team.channels.find((e) => e.id == channelid);
+
+		teamchannelselectionhandler(team, channel);
+	}
+
+	export let teamchannelselectionhandler;
+
+	let selectedchannel = 'a09b084a-2724-4c18-91a0-883ed0be7c39';
 </script>
 
 <mstteamselection class="app-trailing-shadow">
@@ -24,43 +36,80 @@
 	</header>
 	<teamlist>
 		<ul class="list-teams">
-			<MSTTeamSelectionItem
+			{#each dataset.teams as team}
+				<MSTTeamSelectionItem
+					id={team.id}
+					name={team.name}
+					channelsvisible={team.channelsvisible}
+					{selectedchannel}
+					channelselectedaction={clickedChannel}
+					channels={team.channels}
+				/>
+			{/each}
+			<!--<MSTTeamSelectionItem
 				name={'Apple'}
 				channelsvisible={true}
+				{selectedchannel}
 				channels={[
-					{ name: 'General', selected: false },
-					{ name: 'WWDC 22', selected: false },
-					{ name: 'September Event', selected: false },
-					{ name: 'iPhone 9999', selected: false },
-					{ name: 'Apple Glasses', selected: false },
+					{
+						id: '0000',
+						name: 'General',
+						clickevent: clickedbutton,
+					},
+					{
+						id: '0001',
+						name: 'WWDC 22',
+						clickevent: clickedbutton,
+					},
+					{
+						id: '0002',
+						name: 'September Event',
+						clickevent: clickedbutton,
+					},
+					{
+						id: '0003',
+						name: 'iPhone 9999',
+						clickevent: clickedbutton,
+					},
+					{
+						id: '0004',
+						name: 'Apple Glasses',
+						clickevent: clickedbutton,
+					},
 				]}
 			/>
 			<MSTTeamSelectionItem
 				name={'Google'}
 				channelsvisible={false}
+				{selectedchannel}
 				channels={[
-					{ name: 'General', selected: false },
-					{ name: 'Gmail', selected: false },
-					{ name: 'Google Docs', selected: false },
-					{ name: 'Search', selected: false },
-					{ name: 'AI', selected: false },
-					{ name: 'Quantum Computing', selected: false },
-					{ name: 'Coffee Break', selected: false },
+					{ name: 'General', clickevent: clickedbutton, id: '0100' },
+					{ name: 'Gmail', clickevent: clickedbutton, id: '0101' },
+					{ name: 'Google Docs', clickevent: clickedbutton, id: '0102' },
+					{ name: 'Search', clickevent: clickedbutton, id: '0103' },
+					{ name: 'AI', clickevent: clickedbutton, id: '0104' },
+					{
+						name: 'Quantum Computing',
+						clickevent: clickedbutton,
+						id: uuidv4(),
+					},
+					{ name: 'Coffee Break', clickevent: clickedbutton, id: uuidv4() },
 				]}
 			/>
 			<MSTTeamSelectionItem
 				name="Microsoft"
 				channelsvisible={true}
+				{selectedchannel}
 				channels={[
-					{ name: 'General', selected: true },
-					{ name: 'Azure', selected: false },
-					{ name: 'Microsoft 365', selected: false },
-					{ name: 'Secret Project', selected: false },
-					{ name: 'Surface', selected: false },
-					{ name: 'Cloud Computing', selected: false },
-					{ name: 'Microsoft Teams', selected: false },
+					{ name: 'General', clickevent: clickedbutton, id: uuidv4() },
+					{ name: 'Azure', clickevent: clickedbutton, id: uuidv4() },
+					{ name: 'Microsoft 365', clickevent: clickedbutton, id: uuidv4() },
+					{ name: 'Secret Project', clickevent: clickedbutton, id: uuidv4() },
+					{ name: 'Surface', clickevent: clickedbutton, id: uuidv4() },
+					{ name: 'Cloud Computing', clickevent: clickedbutton, id: uuidv4() },
+					{ name: 'Microsoft Teams', clickevent: clickedbutton, id: uuidv4() },
 				]}
-			/>
+			/>-->
 		</ul>
 	</teamlist>
 	<footer>
@@ -162,7 +211,16 @@
 	teamlist {
 		display: block;
 		width: 100%;
+		overflow-y: scroll;
+		scrollbar-width: none;
+		padding-bottom: 8px;
 		height: calc(100% - 60px - 55px);
+	}
+
+	teamlist::-webkit-scrollbar {
+		width: 0;
+		height: 0;
+		display: none;
 	}
 
 	teamlist ul {
